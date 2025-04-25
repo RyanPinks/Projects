@@ -1,18 +1,28 @@
-import random
+// Fortune lists
+const fortunes = {
+    "Lucky": [
+        "Luck is in your favor today.",
+        "Too bad, luck is not on your side today."
+    ],
+    "Romance": [
+        "A special encounter will occur today.",
+        "You will meet your future spouse today."
+    ]
+};
 
-print("Welcome! Here is a list of themes: Lucky and Romance")
-theme = input("Insert the theme you choose: ")
+// Function to generate a random fortune
+function getFortune() {
+    const theme = document.getElementById("theme-selector").value;
+    const outputDiv = document.getElementById("oracle-output");
 
-# Fortune lists
-Lucky = [
-    "Luck is in your favor today.",
-    "Too bad, luck is not on your side today."
-]
+    if (fortunes[theme]) {
+        const fortune = fortunes[theme][Math.floor(Math.random() * fortunes[theme].length)];
+        outputDiv.innerHTML = `<strong>The Oracle Sphere whispers:</strong> "${fortune}"`;
+    } else {
+        outputDiv.innerHTML = "The Oracle Sphere does not recognize that theme. Try again.";
+    }
+}
 
-Romance = [
-    "A special encounter will occur today.",
-    "You will meet your future spouse today."
-]
 
 # Determine response
 if theme == "Lucky":
