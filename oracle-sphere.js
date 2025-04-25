@@ -31,3 +31,4 @@ elif theme == "Romance":
     print(random.choice(Romance))
 else:
     print("The Oracle Sphere does not recognize that theme. Try again.")
+console.log("Oracle Sphere script is running!");
